@@ -114,7 +114,7 @@
                 </div>
                 <div class="batch">
                     <label>User Name</label>
-                    <input type="text" id="useName" placeholder="Enter your username">
+                    <input type="text" id="userName" placeholder="Enter your username">
                     <span id="userNameError" class="error"></span>
 
                     <label>Phone Number</label>
@@ -131,12 +131,12 @@
                 <div class="radio-btns">
                     <div><input type="radio" name="gender" id="male" value="Male">Male </div>
                     <div><input type="radio" name="gender" id="female" value="Female">Female </div>
-                    <div><input type="radio" name="gender" id="others" value="Prefer not to say">Prefer not to say
-                    </div>
-                </div> <br>
+                    <div><input type="radio" name="gender" id="others" value="Prefer not to say">Prefer not to say</div>
+                </div>
+                 <br>
                 <span id="genderError" class="error"></span><br>
                 <button type="submit" class="btn">Register</button>
-
+                <p id="msg" style="color: green; text-align: center;" hidden>Success</p>
             </div>
         </form>
     </div>
@@ -150,7 +150,7 @@
             document.querySelectorAll('.error').forEach(span => span.textContent = '');
 
             let fullName = document.getElementById("fullName").value.trim();
-            let userName = document.getElementById("useName").value.trim();
+            let userName = document.getElementById("userName").value.trim();
             let email = document.getElementById("email").value.trim();
             let phoneNumber = document.getElementById("phoneNumber").value.trim();
             let password = document.getElementById("password").value;
@@ -199,7 +199,7 @@
 
             // If everything is valid, show the registration details
             if (isValid) {
-                alert(`Full Name: ${fullName}\nUser Name: ${userName}\nEmail: ${email}\nPhone: ${phoneNumber}\nGender: ${gender}`);
+                document.getElementById("msg").hidden = false;
             }
 
             return isValid;
